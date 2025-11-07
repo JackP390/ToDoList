@@ -11,5 +11,14 @@
         {% csrf_token %}
         {{form}}
         <button type="submit">Guardar</button>
+    </form>
+
+    {% if tareas %}
+    <ul>
+        {% for tarea in tareas %}
+        <li>{{tarea.titulo}} {{tarea.descripcion}} {{tarea.fecha_creacion}} <input type="checkbox" {% if tarea.estado %} checked {% endif %} disabled></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 </html>

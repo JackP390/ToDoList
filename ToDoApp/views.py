@@ -10,5 +10,5 @@ def main(request):
             form.save()
     form = FormTarea()
     tarea = Tarea.objects.all()
-    context = {'form':form, 'tarea':tarea}
+    context = {'form':form, 'tareas':tarea}
     return render(request, 'main.html', context)
