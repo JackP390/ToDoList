@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1>Lista de Tareas</h1>
+    <form action="{% url 'main' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Guardar</button>
 </body>
 </html>
